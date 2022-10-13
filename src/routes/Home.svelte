@@ -1,5 +1,6 @@
 <script lang="ts">
     import Header from "../components/header/Header.svelte";
+    import SearchBar from "../components/header/SearchBar.svelte";
 </script>
 
 <main>
@@ -13,7 +14,7 @@
     </section>
     <article class="searchbar">
         <nav>
-            <img src="src/assets/magnifying-glass-solid.svg" width="25" height="25" />
+            <SearchBar />
         </nav>
     </article>
 </main>
@@ -27,44 +28,52 @@
     .sklep {
       width: 100%;
       display: flex;
+      height: 300vh;
       justify-content: center;
 
       .logo {
-        height: 25%;
+        height: 25vh;
         display: flex;
         justify-content: center;
         align-items: center;
+        z-index: -1;
 
         img {
           transform: scale(.7);
 
-          @media screen and (max-width: 675px) {
-            transform: scale(.45);
-            width: 470px;
-            height: 300px;
+          @media screen and (max-width: 800px) {
+            transform: scale(.55);
           }
+        }
+      }
+      @media screen and (max-width: 800px) {
+        justify-content: right;
+        .logo {
+          width: 500px;
+          justify-content: left;
+        }
+      }
+
+      @media screen and (max-width: 517px) {
+        .logo {
+          display: none;
         }
       }
     }
 
-    .header {
+    .header:global {
       width: auto;
       min-height: 100%;
     }
 
     .searchbar {
-      width: 5%;
-      margin-right: 1em;
-
+      margin-right: 4em;
       nav {
-        height: 15%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        height: 10%;
+      }
 
-        img {
-          filter: invert(100%);
-        }
+      @media screen and (max-width: 800px) {
+        display: none;
       }
     }
 </style>
