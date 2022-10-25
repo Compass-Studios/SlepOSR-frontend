@@ -1,9 +1,12 @@
 <script lang="ts">
+    import { term } from '../js/stores.js';
+    let val = '';
 
+    $: term.set(val);
 </script>
 
 <form class="search-box">
-    <input type="text" placeholder=" " />
+    <input bind:value={val} type="text" placeholder=" " />
     <button type="reset">
 
     </button>
@@ -32,7 +35,7 @@
     display: inline-block;
     position: relative;
     border-radius: $size;
-    transform: translateY(8vh);
+    transform: translateY(8vh) scale(.9);
 
     input[type="text"] {
       cursor: pointer;

@@ -1,6 +1,7 @@
 <script lang="ts">
     import SearchBar from "./SearchBar.svelte";
     import { Link } from "svelte-navigator";
+    export let back = false;
 
     let slide = false;
 
@@ -29,6 +30,13 @@
                         Galeria
                     </Link>
                 </li>
+                {#if back}
+                    <li>
+                        <Link to="/" style="text-decoration: none">
+                            powrót
+                        </Link>
+                    </li>
+                {/if}
                 <li class="searchbar">
                     <nav>
                         <SearchBar />
@@ -66,13 +74,19 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        @media screen and (min-width: 800px) {
+          position: fixed;
+        }
 
         nav {
           ul {
             display: flex;
             flex-direction: column;
             list-style: none;
+            gap: .5em;
             height: 100%;
+
+            z-index: 10000;
 
             @media screen and (max-width: 800px) {
               body {
@@ -90,7 +104,7 @@
               align-items: center;
               justify-content: center;
               gap: 5vh;
-              transform: translateX(-100%);
+              transform: translateX(-150%);
               transition: transform .3s ease-in;
             }
             
@@ -108,6 +122,11 @@
               font-size: 20px;
               font-weight: bold;
               letter-spacing: 2px;
+              transition: all .3s ease;
+
+              &:hover {
+                padding-left: 10px;
+              }
 
               .line1 {
                 transform: rotate(-45deg) translate(-6px, 6px);
