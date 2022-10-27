@@ -19,9 +19,9 @@
             </div>
         </article>
         <article class="products">
-            {#each {length: 15} as _, i}
+            {#each $filtered as item, i}
                 <div class="child" id={i}>
-                    <ProductsView className={filtered} />
+                    <ProductsView className={item} />
                 </div>
             {/each}
         </article>
@@ -63,6 +63,9 @@
 
         @media screen and (max-width: 517px) {
           grid-template-columns: 1fr;
+            :nth-of-type(1n+9) {
+              display: none;
+            }
         }
 
         .child {
@@ -78,6 +81,8 @@
             width: fit-content;
             height: fit-content;
           }
+
+
 
           &:hover {
             border-color: white;

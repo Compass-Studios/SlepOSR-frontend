@@ -1,6 +1,8 @@
 <script lang="ts">
     import ProductsView from "./ProductsView.svelte";
-     let componentClass: string;
+    import { filtered } from "../js/stores";
+
+    let componentClass: string;
      let componentQuery: string;
      let componentName: string;
 
@@ -37,12 +39,11 @@
 <div class="products">
     <div class="cover">
         <div class="{componentClass}">
-            <div class="child"><ProductsView /></div>
-            <div class="child"><ProductsView /></div>
-            <div class="child"><ProductsView /></div>
-            <div class="child"><ProductsView /></div>
-            <div class="child"><ProductsView /></div>
-            <div class="child"><ProductsView /></div>
+            {#each $filtered as item, i}
+                <div class="child" id={i}>
+                    <ProductsView className={item} />
+                </div>
+            {/each}
         </div>
     </div>
 </div>

@@ -31,7 +31,7 @@
     </div>
     <div>
         <h3>
-            {select[0].name}
+            {className}
         </h3>
         <h4>
             {select[0].price} PLN
