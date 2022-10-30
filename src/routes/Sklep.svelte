@@ -47,7 +47,7 @@
       @media screen and (min-width: 800px) {
         .header {
           position: absolute;
-          top: 10vh;
+          top: 14vh;
           left: 0;
         }
       }
