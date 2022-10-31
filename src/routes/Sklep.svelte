@@ -57,8 +57,14 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
 
+        @media screen and (min-width: 800px) {
+          margin-left: 8vh;
+        }
+
         @media screen and (max-width: 800px) {
           grid-template-columns: repeat(2, 1fr);
+          margin-left: 5vh;
+          margin-top: 5vh;
         }
 
         @media screen and (max-width: 517px) {

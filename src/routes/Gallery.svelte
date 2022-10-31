@@ -14,7 +14,7 @@
 </script>
 
 <section class="gallery">
-    <div class="header">
+    <div class="header" >
         <Header back={true} />
     </div>
     <main>

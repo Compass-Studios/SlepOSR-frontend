@@ -1,8 +1,6 @@
 <script>
-    import {onMount} from "svelte";
     import Header from "../components/header/Header.svelte";
     import SearchBar from "../components/header/SearchBar.svelte";
-    import ProductsView from "../components/home/ProductsView.svelte";
     import ProductsContainer from "../components/home/ProductsContainer.svelte";
 </script>
 
